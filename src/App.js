@@ -140,7 +140,7 @@ class App extends Component {
                 <div className="row">
                   <div className="col-4">Password Length</div>
                   <div className="col-4">{this.state.password_length}</div>
-                  <div className="col-4"><input type="range" min="1" max="100" value={this.state.password_length} onChange={e=>{this.setState({password_length:e.target.value});this.generatePassword();}} /></div>
+                  <div className="col-4"><input type="range" min="1" max="100" value={this.state.password_length} onChange={e=>{this.setState({password_length:e.target.value}, ()=>this.generatePassword());}} /></div>
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@ class App extends Component {
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-6">A-Z</div>
-                  <div className="col-6"><input type="checkbox" defaultChecked={this.state.A_Z} onChange={e=>{this.setState({A_Z: !this.state.A_Z});this.generatePassword();}}/></div>
+                  <div className="col-6"><input type="checkbox" defaultChecked={this.state.A_Z} onChange={e=>{this.setState({A_Z: !this.state.A_Z}, ()=>this.generatePassword());}}/></div>
                 </div>
               </div>
             </div>
@@ -164,7 +164,7 @@ class App extends Component {
               <div className="container-fluid">
                   <div className="row">
                     <div className="col-6">a-z</div>
-                    <div className="col-6"><input type="checkbox"  defaultChecked={this.state.a_z} onChange={e=>{this.setState({a_z: !this.state.a_z});this.generatePassword();}}/></div>
+                    <div className="col-6"><input type="checkbox"  defaultChecked={this.state.a_z} onChange={e=>{this.setState({a_z: !this.state.a_z}, ()=>this.generatePassword());}}/></div>
                   </div>
                 </div>
               </div>
@@ -176,7 +176,7 @@ class App extends Component {
               <div className="container-fluid">
                   <div className="row">
                     <div className="col-6">0-9</div>
-                    <div className="col-6"><input type="checkbox"  defaultChecked={this.state.n0_9} onChange={e=>{this.setState({n0_9: !this.state.n0_9});this.generatePassword();}}/></div>
+                    <div className="col-6"><input type="checkbox"  defaultChecked={this.state.n0_9} onChange={e=>{this.setState({n0_9: !this.state.n0_9}, ()=>this.generatePassword());}}/></div>
                   </div>
                 </div>
               </div>
@@ -188,7 +188,7 @@ class App extends Component {
               <div className="container-fluid">
                   <div className="row">
                     <div className="col-6">!@#$%^&*()</div>
-                    <div className="col-6"><input type="checkbox" defaultChecked={this.state.special_chars} onChange={e=>{this.setState({special_chars: !this.state.special_chars});this.generatePassword();}}/></div>
+                    <div className="col-6"><input type="checkbox" defaultChecked={this.state.special_chars} onChange={e=>{this.setState({special_chars: !this.state.special_chars},()=>this.generatePassword());}}/></div>
                   </div>
                 </div>
               </div>
@@ -200,7 +200,7 @@ class App extends Component {
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-6">Minimum Numbers</div>
-                  <div className="col-6"><input type="number" value={this.state.minimum_numbers} min={0} max={this.state.password_length} onChange={e=>{this.setState({minimum_numbers:e.target.value});this.generatePassword();}} /></div>
+                  <div className="col-6"><input type="number" value={this.state.minimum_numbers} min={0} max={this.state.password_length} onChange={e=>{this.setState({minimum_numbers:e.target.value}, ()=>this.generatePassword());}} /></div>
                 </div>
               </div>
             </div>
@@ -212,7 +212,7 @@ class App extends Component {
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-6">Minimum Special</div>
-                  <div className="col-6"><input type="number"  value={this.state.minimum_special} min={0} max={this.state.password_length} onChange={e=>{this.setState({minimum_special:e.target.value});this.generatePassword();}} /></div>
+                  <div className="col-6"><input type="number"  value={this.state.minimum_special} min={0} max={this.state.password_length} onChange={e=>{this.setState({minimum_special:e.target.value},()=>this.generatePassword());}} /></div>
                 </div>
               </div>
             </div>
